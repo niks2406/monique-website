@@ -13,24 +13,30 @@
     }
 
     h1 {
-      text-align: left; /* align left */
+      text-align: left; 
     }
 
-    /* Rectangle / stripe style */
+
     .rectangle {
       width: 15px;
       height: 60px;
-      background-color: #ffffff; /* white rectangle */
+      background-color:
       transform: skew(-20deg);   /* slant effect */
       margin-top: -10px;
     }
+
+    .logo {
+      display: flex;
+      gap: 10px; 
+    }
   </style>
 </head>
-  <header>
-    <div class="rectangle"></div>
-  </header>
 <body>
-
-  
+  <header>
+    <div class="logo">
+      <div class="rectangle"></div>
+      <div class="rectangle"></div>
+    </div>
+  </header>
 </body>
 </html>
