@@ -58,10 +58,10 @@ background: none;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 80px 20px;
+      padding: 80px 80px;
     }
     .hero img {
-      width: 250px;
+      width: 420px;
       border-radius: 5px;
       margin-bottom: 30px;
     }
@@ -72,6 +72,10 @@ background: none;
     .hero p {
       font-size: 1.2rem;
       margin: 5px 0;
+    }
+
+    .hero-text{
+      max-width:600px;
     }
     .stats {
       display: flex;
@@ -115,13 +119,15 @@ background: none;
 
 
   <section class="hero">
-    <img src="portrait.png" alt="insert here Portrait">
-    <h1>Hello — It’s Monique</h1>
-    <p>a design wizard</p>
+   <div class="hero-text">
+    <h1>Hello</h1>
+    <h1>It's Monique</h1>
+    <p>learning never goes out of style</p>
     <div class="stats">
       <div>+200 Project completed</div>
       <div>+50 Startup raised</div>
     </div>
+      <img src="portrait.png" alt="insert here Portrait">
     <div class="scroll-down">Scroll down ↓</div>
   </section>
 
