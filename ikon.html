@@ -13,21 +13,22 @@
     }
 
     h1 {
-      text-align: left; 
+      text-align: left; /* align left */
     }
 
-
+    /* Rectangle / stripe style */
     .rectangle {
       width: 15px;
       height: 60px;
-      background-color:
+      background-color: #ffffff; /* white rectangle */
       transform: skew(-20deg);   /* slant effect */
       margin-top: -10px;
     }
 
+    /* Container to hold rectangles side by side */
     .logo {
       display: flex;
-      gap: 10px; 
+      gap: 10px; /* space between rectangles */
     }
   </style>
 </head>
@@ -35,7 +36,7 @@
   <header>
     <div class="logo">
       <div class="rectangle"></div>
-      <div class="rectangle"></div>
+      <div class="rectangle"></div> <!-- second rectangle on the right -->
     </div>
   </header>
 </body>
