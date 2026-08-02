@@ -50,63 +50,113 @@ padding: 8px 18px;
 border-radius: 25px;
 font-weight: bold;
 background: none;
+cursor: pointer;
+transition: 0.3s;
 }
 
+.connect-btn:hover {
+background-color: #222222;
+color: #F8F8F8;
+}
 
     .hero {
       display: flex;
+      gap: 80px;
+      padding: 60px 80px;
+      min-height: 80vh;
+    }
+
+    .left-section {
+      display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 80px 30px;
+      flex: 0 0 auto;
+      justify-content: center;
     }
-    .hero img {
-      width: 420px;
-      border-radius: 5px;
-      margin-bottom: 30px;
+
+    .hello-text {
+      font-family: 'Aenok', sans-serif;
+      font-size: 8rem;
+      font-weight: 300;
+      line-height: 0.9;
+      margin: 0 0 40px 0;
     }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
     .hero h1 {
-      font-size: 2.5rem;
-      margin: 10px 0;
+      font-size: 1.8rem;
+      margin: 0 0 15px 0;
+      font-weight: 700;
+      background: linear-gradient(90deg, #FFFF00 0%, #FFFF00 45%, transparent 45%, transparent 100%);
+      padding: 0;
+      position: relative;
     }
+
     .hero p {
-      font-size: 1.2rem;
-      margin: 5px 0;
+      font-size: 1.1rem;
+      margin: 0 0 30px 0;
+      color: #555;
+      background: linear-gradient(90deg, transparent 0%, transparent 30%, #FFFF00 30%, #FFFF00 80%, transparent 80%);
+      padding: 10px 0;
     }
 
-    .hero-text{
-      max-width:600px;
-    }
-
-  .hello-text{
-    font-family: 'Neue Montreal', sans-serif;
-    font-size: 9rem
-    font-weight: 300;
-  }
-    
     .stats {
       display: flex;
-      gap: 40px;
-      margin: 30px 0;
+      gap: 80px;
+      margin: 0;
     }
+
     .stats div {
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 600;
     }
-   
+
+    .stats div span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .stats {
+      background: linear-gradient(90deg, transparent 0%, transparent 20%, #FFFF00 20%, #FFFF00 100%);
+      padding: 10px 0;
+    }
+
+    .hero-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .hero img {
+      width: 350px;
+      height: auto;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+
     .vertical-text {
       position: fixed;
-      left: 20px;
-      bottom: 50px;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      font-size: 0.9rem;
-      color: #555;
+      font-size: 0.85rem;
+      color: #999;
+      letter-spacing: 2px;
     }
+
     .scroll-down {
-      margin-top: 50px;
+      margin-top: 20px;
       font-size: 0.9rem;
-      color: #555;
+      color: #999;
     }
   </style>
 </head>
@@ -124,19 +174,25 @@ background: none;
 </nav>
 </header>
 
+<div class="vertical-text">Featured designs</div>
 
   <section class="hero">
-     <div class="hello-text">Hello
-       </div>
-   <div class="hero-text">
-    <h1>It's Monique</h1>
-    <p>learning never goes out of style</p>
-    <div class="stats">
-      <div>+200 Project completed</div>
-      <div>+50 Startup raised</div>
+    <div class="left-section">
+      <div class="hello-text">Hello</div>
+      <div class="hero-text">
+        <h1>It's Monique</h1>
+        <p>learning never goes out of style</p>
+        <div class="stats">
+          <div>+200 <span>Project completed</span></div>
+          <div>+50 <span>Startup raised</span></div>
+        </div>
+      </div>
     </div>
-      <img src="portrait.png" alt="insert here Portrait">
-    <div class="scroll-down">Scroll down ↓</div>
+
+    <div class="hero-center">
+      <img src="portrait.png" alt="Portrait - Monique">
+      <div class="scroll-down">Scroll down ↓</div>
+    </div>
   </section>
 
  
