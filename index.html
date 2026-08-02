@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monique's World</title>
   <style>
+   @import url('https://fonts.googleapis.com/css2?family=Aeonik:wght@400;700&display=swap');
+
    body {
   margin: 0;
   font-family: 'Aenok', sans-serif; /* custom font */
@@ -64,13 +66,14 @@ color: #F8F8F8;
       gap: 80px;
       padding: 60px 80px;
       min-height: 80vh;
+      align-items: flex-start;
     }
 
     .left-section {
       display: flex;
       flex-direction: column;
       flex: 0 0 auto;
-      justify-content: center;
+      padding-top: 20px;
     }
 
     .hello-text {
@@ -78,17 +81,49 @@ color: #F8F8F8;
       font-size: 8rem;
       font-weight: 300;
       line-height: 0.9;
-      margin: 0 0 40px 0;
+      margin: 0 0 -10px 0;
     }
 
     .hero-text {
       max-width: 500px;
+      margin-top: 0;
     }
 
-    .hero h1 {
-      font-size: 1.8rem;
-      margin: 0 0 15px 0;
-      font-weight: 700;
+    .typewriter {
+      font-size: 1.1rem;
+      margin: 10px 0 0 0;
+      font-weight: 400;
+      font-family: Arial, sans-serif;
+      display: inline-block;
+      overflow: hidden;
+      border-right: 3px solid #222222;
+      white-space: nowrap;
+      animation: typing 5s steps(45, end), blink 0.7s step-end infinite;
+      color: #222222;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      0%, 49%, 100% {
+        border-right-color: #222222;
+      }
+      50%, 99% {
+        border-right-color: transparent;
+      }
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      margin: 10px 0 30px 0;
+      color: #555;
     }
 
     .hero p {
@@ -120,8 +155,9 @@ color: #F8F8F8;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex: 1;
+      padding-top: 20px;
     }
 
     .hero img {
@@ -170,8 +206,7 @@ color: #F8F8F8;
     <div class="left-section">
       <div class="hello-text">Hello</div>
       <div class="hero-text">
-        <h1>It's Monique</h1>
-        <p>learning never goes out of style</p>
+        <p class="typewriter">It's Monique — learning never goes out of style</p>
         <div class="stats">
           <div>+200 <span>Project completed</span></div>
           <div>+50 <span>Startup raised</span></div>
