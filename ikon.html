@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dark Background Page</title>
+  <title>Rectangle Example</title>
   <style>
     body {
       background-color: #222222;
-      color: #ffffff; /* white text for contrast */
+      color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: left; /* align left */
+    }
+
+    /* Rectangle / stripe style */
+    .rectangle {
+      width: 120px;
+      height: 40px;
+      background-color: #ffffff; /* white rectangle */
+      transform: skew(-20deg);   /* slant effect */
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, Monique!</h1>
+
+  <div class="rectangle"></div>
 </body>
 </html>
