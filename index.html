@@ -11,18 +11,27 @@
       background-color: #F8F8F8;
       color: #000;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
+
+    
+   header {
+  display: flex;
+  justify-content: flex-end; /* push everything to the right */
+  padding: 20px 50px;
+}
+
+.nav-right a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.connect-btn {
+  border: 2px solid #000;   /* rectangular outline */
+  padding: 8px 16px;
+  border-radius: 4px;       /* optional rounded corners */
+  font-weight: bold;
+}
     .hero {
       display: flex;
       flex-direction: column;
@@ -52,17 +61,7 @@
       font-size: 1rem;
       font-weight: bold;
     }
-    .cta {
-      margin-top: 15px;
-    }
-    .cta a {
-      text-decoration: none;
-      background: #F8F8F8;
-      color: #000;
-      padding: 12px 25px;
-      border-radius: 4px;
-      font-weight: bold;
-    }
+   
     .vertical-text {
       position: fixed;
       left: 20px;
@@ -81,16 +80,14 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav clas="nav-right">
       <a href="#">About Me</a>
       <a href="#">Portfolio</a>
       <a href="#">Travel</a>
       <a href="#">Blog</a>
        <a href="#">iKOn Archive</a>
+       <a href="#" class="connect-btn">Let's Connect ↗</a>
     </nav>
-    <div class="cta">
-      <a href="#">Let's Connect ↗</a>
-    </div>
   </header>
 
   <section class="hero">
