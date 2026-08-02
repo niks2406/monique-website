@@ -2,19 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dark Background Page</title>
+  <title>Hardcoded Logo Page</title>
   <style>
     body {
       background-color: #222222;
-      color: #ffffff; /* white text for contrast */
+      color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    .stripe {
+      width: 10px;
+      height: 60px;
+      background-color: #ffffff;
+      transform: skew(-20deg);
     }
   </style>
 </head>
 <body>
-  <h1>Hello, Monique!</h1>
-  <p>This page has a dark gray background (#222222).</p>
+  <div class="header">
+    <div class="logo">
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+    </div>
+    <h1>Hello, Monique!</h1>
+  </div>
+
+  <p>This page has a hardcoded #222222 background with a stripe logo.</p>
 </body>
 </html>
