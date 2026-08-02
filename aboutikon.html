@@ -1,1 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iKon is coming to town</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 170px;
+      background-color: #000000;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: 160px;
+      width: auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.08);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:hover {
+      color: #8B0000;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #8B0000, #ffffff);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 170px;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 950px;
+      z-index: 10;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      margin-bottom: 25px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: #8B0000;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cccccc;
+      line-height: 1.9;
+      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-highlight {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .fan-box {
+      max-width: 720px;
+      margin: 45px auto 0;
+      padding: 28px;
+      border-left: 3px solid #8B0000;
+      background: rgba(255, 255, 255, 0.035);
+      text-align: left;
+    }
+
+    .fan-box h2 {
+      color: #ffffff;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .fan-box p {
+      margin-bottom: 0;
+    }
+
+    .solari-wrap {
+      margin-top: 38px;
+      text-align: center;
+    }
+
+    .solari-label {
+      color: #888888;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .solari-board {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      min-height: 72px;
+      flex-wrap: wrap;
+    }
+
+    .solari-tile {
+      width: 48px;
+      height: 64px;
+      background: linear-gradient(180deg, #151515 0%, #050505 50%, #111111 100%);
+      border: 1px solid #2f2f2f;
+      border-radius: 2px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Courier New', monospace;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .solari-tile::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      z-index: 2;
+    }
+
+    .solari-tile.flip {
+      animation: flipTile 0.14s linear;
+    }
+
+    .fan-message {
+      margin-top: 18px;
+      color: #bbbbbb;
+      font-size: 0.95rem;
+      min-height: 24px;
+    }
+
+    @keyframes flipTile {
+      0% {
+        transform: rotateX(0deg);
+        filter: brightness(1);
+      }
+
+      50% {
+        transform: rotateX(90deg);
+        filter: brightness(0.5);
+      }
+
+      100% {
+        transform: rotateX(0deg);
+        filter: brightness(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        height: 150px;
+        padding: 0 20px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        margin-top: 150px;
+        padding: 50px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+        letter-spacing: 2px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .fan-box {
+        padding: 22px;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .solari-board {
+        gap: 5px;
+      }
+
+      .solari-tile {
+        width: 36px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        height: 130px;
+        padding: 0 15px;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        margin-top: 130px;
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo" onclick="document.querySelector('.hero').scrollIntoView()">
+      <img src="ikon.jpg" alt="iKON Logo">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="aboutikon.html">About</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="discography.html">Discography</a></li>
+      <li><a href="videography.html">Videography</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About <span>iKON</span></h1>
+
+      <p>
+        <span class="hero-highlight">iKON</span> is a South Korean boy group with a bold identity,
+        memorable style, and a loyal fan community that continues to grow across the world.
+      </p>
+
+      <p>
+        This page is dedicated to their story, members, milestones, discography, videos, and the moments
+        that made iKON special to iKONICs everywhere.
+      </p>
+
+      <div class="fan-box">
+        <h2>Supported by iKONICs</h2>
+        <p>
+          iKONICs are the fans who keep the energy alive — celebrating every comeback, performance,
+          memory, and era with love from different parts of the world.
+        </p>
+      </div>
+
+      <div class="solari-wrap" aria-label="Rotating iKONIC country display">
+        <div class="solari-label">iKONICs from</div>
+        <div class="solari-board" id="solariBoard"></div>
+        <p class="fan-message" id="fanMessage">Loading iKONIC location...</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    const countries = [
+      {
+        name: 'PHILIPPINES',
+        message: 'Philippines iKONICs: loud, loyal, and always ready to cheer.'
+      },
+      {
+        name: 'JAKARTA',
+        message: 'cheering iKON with full energy'
+      },
+        {
+        name: 'MACAU',
+        message: 'Korea iKONICs: supporting iKON from home base.'
+      },
+      {
+        name: 'JAPAN',
+        message: 'Japan iKONICs: bringing strong love and concert energy.'
+      },
+      {
+        name: 'TAIPEI',
+        message: 'TAIPEI iKONICs: showing support across time zones.'
+      },
+      {
+        name: 'WORLDWIDE',
+        message: 'iKONICs worldwide: one fandom, many places.'
+      }
+    ];
+
+    const solariBoard = document.getElementById('solariBoard');
+    const fanMessage = document.getElementById('fanMessage');
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ';
+    let currentCountryIndex = Math.floor(Math.random() * countries.length);
+
+    function createTiles(countryName) {
+      solariBoard.innerHTML = '';
+
+      countryName.split('').forEach(() => {
+        const tile = document.createElement('span');
+        tile.className = 'solari-tile';
+        tile.textContent = ' ';
+        solariBoard.appendChild(tile);
+      });
+    }
+
+    function animateCountry(country) {
+      createTiles(country.name);
+      const tiles = document.querySelectorAll('.solari-tile');
+      fanMessage.textContent = country.message;
+
+      tiles.forEach((tile, index) => {
+        const finalLetter = country.name[index];
+        let flips = 0;
+        const maxFlips = 10 + index * 2;
+
+        const interval = setInterval(() => {
+          const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
+          tile.textContent = randomCharacter;
+          tile.classList.remove('flip');
+          void tile.offsetWidth;
+          tile.classList.add('flip');
+          flips++;
+
+          if (flips >= maxFlips) {
+            clearInterval(interval);
+            tile.textContent = finalLetter;
+          }
+        }, 65);
+      });
+    }
+
+    function showNextCountry() {
+      animateCountry(countries[currentCountryIndex]);
+      currentCountryIndex = (currentCountryIndex + 1) % countries.length;
+    }
+
+    showNextCountry();
+    setInterval(showNextCountry, 4200);
+  </script>
+</body>
+</html>
