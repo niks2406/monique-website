@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iKon is coming to town</title>
+  <title>iKON Universe - Official Fanpage</title>
   <style>
     * {
       margin: 0;
@@ -93,7 +93,7 @@
       width: 100%;
     }
 
-  
+    /* HERO SECTION */
     .hero {
       height: 100vh;
       background: #222222;
@@ -298,7 +298,7 @@
       }
     }
 
-
+    /* ABOUT SECTION */
     .about {
       padding: 120px 60px;
       background: #222222;
@@ -587,7 +587,7 @@
       box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
     }
 
-
+    /* VIDEOGRAPHY SECTION */
     .videography {
       padding: 120px 60px;
       background: #222222;
@@ -692,7 +692,7 @@
       box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
     }
 
- 
+    /* FOOTER */
     footer {
       background: #1a1a1a;
       padding: 50px 60px;
@@ -724,24 +724,59 @@
       text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     }
 
- 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo img {
+        height: 40px;
       }
 
       .nav-links {
-        gap: 20px;
-        font-size: 0.85rem;
+        gap: 15px;
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        margin-top: 120px;
+        padding: 20px;
+        min-height: auto;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
       }
 
       .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .about,
+      .members,
+      .timeline,
+      .discography,
+      .videography,
+      .gallery {
+        padding: 60px 20px;
       }
 
       .about-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
       }
 
       .members-grid,
@@ -749,19 +784,236 @@
       .video-grid,
       .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
 
+      .member-card {
+        height: auto;
+      }
+
+      .member-image {
+        height: 180px;
+        font-size: 3rem;
+      }
+
+      .member-name {
+        font-size: 1.3rem;
+      }
+
+      .album-card,
+      .video-card {
+        padding: 15px;
+      }
+
+      .album-title {
+        font-size: 1.1rem;
+      }
+
+      .video-thumbnail {
+        height: 150px;
+        font-size: 2rem;
+      }
+
+      .play-icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .gallery-item {
+        height: 200px;
+        font-size: 1.5rem;
+      }
+
+      footer {
+        padding: 30px 20px;
+      }
+
+      .social-links {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        font-size: 0.8rem;
+      }
+
+      .about-text h3 {
+        font-size: 1.5rem;
+      }
+
+      .about-text p {
+        font-size: 0.95rem;
+      }
+
+      .stat-box {
+        padding: 15px;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+      }
+
+      .timeline-year {
+        font-size: 1.5rem;
+      }
+
+      .timeline-content {
+        padding: 15px;
+      }
+
+      .timeline-content h4 {
+        font-size: 1rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
       nav {
-        padding: 15px 20px;
+        padding: 10px 15px;
       }
 
-      .logo {
-        font-size: 1.4rem;
+      .logo img {
+        height: 35px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        margin-top: 100px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .about,
+      .members,
+      .timeline,
+      .discography,
+      .videography,
+      .gallery {
+        padding: 40px 15px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .members-grid,
+      .discography-grid,
+      .video-grid,
+      .gallery-grid {
+        gap: 15px;
+      }
+
+      .member-card {
+        height: auto;
+      }
+
+      .member-image {
+        height: 150px;
+        font-size: 2.5rem;
+      }
+
+      .member-name {
+        font-size: 1.1rem;
+      }
+
+      .member-role {
+        font-size: 0.8rem;
+      }
+
+      .member-desc {
+        font-size: 0.8rem;
+      }
+
+      .album-title {
+        font-size: 1rem;
+      }
+
+      .album-year {
+        font-size: 0.85rem;
+      }
+
+      .track-count {
+        font-size: 0.8rem;
+      }
+
+      .listen-btn {
+        padding: 8px 15px;
+        font-size: 0.75rem;
+      }
+
+      .video-thumbnail {
+        height: 120px;
+      }
+
+      .gallery-item {
+        height: 150px;
+        font-size: 1.2rem;
+      }
+
+      footer {
+        padding: 20px 15px;
+      }
+
+      .social-links {
+        gap: 10px;
+      }
+
+      .social-links a {
+        font-size: 0.75rem;
+      }
+
+      .about-text h3 {
+        font-size: 1.2rem;
+      }
+
+      .about-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+      }
+
+      .timeline-year {
+        font-size: 1.2rem;
+      }
+
+      .timeline-content h4 {
+        font-size: 0.95rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.85rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- NAVBAR -->
   <nav>
     <div class="logo" onclick="document.querySelector('.hero').scrollIntoView()"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 750 750'%3E%3Crect fill='%23222222' width='750' height='750'/%3E%3Cg fill='%23ffffff'%3E%3Cpolygon points='137,354 198,650 289,650 228,354'/%3E%3Cpolygon points='227,354 288,650 379,650 318,354'/%3E%3Cpolygon points='318,354 379,650 470,650 409,354'/%3E%3Cpolygon points='277,470 310,650 370,650 337,470'/%3E%3Cpolygon points='409,354 470,650 561,650 500,354'/%3E%3Cpolygon points='500,354 561,650 652,650 591,354'/%3E%3Cpolygon points='591,354 652,650 743,650 682,354'/%3E%3C/g%3E%3C/svg%3E" alt="iKON Logo" style="height: 50px; width: auto;"></div>
     <ul class="nav-links">
@@ -774,7 +1026,7 @@
     </ul>
   </nav>
 
-
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <p>The Legends Continue</p>
@@ -784,7 +1036,7 @@
 
 
   <script>
- 
+    // Smooth scroll for nav links
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -795,7 +1047,7 @@
       });
     });
 
- 
+    // Add scroll effect to navbar
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (window.scrollY > 50) {
