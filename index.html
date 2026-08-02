@@ -13,38 +13,45 @@
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #F8F8F8;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 60px;
+background-color: #F8F8F8;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #222222;
+font-size: 2rem;
+font-weight: 700;
+color: #222222;
+letter-spacing: 2px;
 }
 
-nav a {
-  color: #222222;
-  text-decoration: none;   /* no underline */
-  margin: 0 12px;          /* konting spacing */
-  font-weight: 500;
+.nav-right {
+display: flex;
+align-items: center;
+gap: 25px;
 }
 
-nav a:hover {
-  color: #000;             /* subtle hover effect */
+.nav-right a {
+color: #222222;
+text-decoration: none;
+font-weight: 500;
+transition: 0.3s;
+}
+
+.nav-right a:hover {
+color: #000;
 }
 
 .connect-btn {
-  border: 2px solid #222222;
-  padding: 6px 14px;       /* tight spacing */
-  border-radius: 20px;     /* rounded button style */
-  font-weight: bold;
-  color: #222222;
-  background: none;
+border: 2px solid #222222;
+padding: 8px 18px;
+border-radius: 25px;
+font-weight: bold;
+background: none;
 }
+
 
     .hero {
       display: flex;
@@ -93,16 +100,19 @@ nav a:hover {
   </style>
 </head>
 <body>
-  <header>
-    <nav clas="nav-right">
-      <a href="#">About Me</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Travel</a>
-      <a href="#">Blog</a>
-       <a href="#">iKOn Archive</a>
-       <a href="#" class="connect-btn">Let's Connect ↗</a>
-    </nav>
-  </header>
+ <header>
+<div class="logo">M.</div>
+
+<nav class="nav-right">
+<a href="#">About Me</a>
+<a href="#">Portfolio</a>
+<a href="#">Travel</a>
+<a href="#">Blog</a>
+<a href="#">iKON Archive</a>
+<a href="#" class="connect-btn">Let's Connect ↗</a>
+</nav>
+</header>
+
 
   <section class="hero">
     <img src="portrait.png" alt="insert here Portrait">
